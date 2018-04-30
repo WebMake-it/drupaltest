@@ -1,0 +1,6 @@
+  drupaltest.admin:
+    title: 'Module Settings'
+    description: 'A basic module to get name, surname and phone number'
+    parent: system.admin_config_development
+    route_name: drupaltest.content
+    weight: 100

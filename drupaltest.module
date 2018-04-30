@@ -1,0 +1,45 @@
+<?php
+
+/*
+* drupaltest module for Drupal 8.x
+*/
+
+/**
+ * Implements hook_install().
+ */
+function drupaltest_install() {
+  drupal_set_message(t("Your Module settings are available under !link",
+    ['!link' => l(t('Administer > Site configuration > Your Module'),  'admin/settings/yourmodule/settings')]
+  ));
+}
+
+/**
+ * Implements hook_menu().
+ */
+function drupaltest_menu()
+{
+  //routing file
+  drupaltest.routing.yml;
+
+  //module menu
+  $items['drupaltest'] = array(
+    'title' => t('Druapltest first page'),
+    'route_name' => 'drupaltest',
+    'page arguments' => array(0),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function drupaltest_theme($existing, $type, $theme, $path) {
+  return [
+    'testtemplate' => [
+      'variables' => ['test_var' => NULL],
+    ],
+  ];
+}
+
+
+
