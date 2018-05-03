@@ -1,0 +1,47 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall the drupaltest module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function drupaltest_schema() {
+    $schema['drupaltest'] = [
+        'description' => 'Drupaltest table storage',
+        'fields' => [
+            'id' => [
+                'description' => 'The primary identifier for an entry.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'name' => [
+                'description' => 'Name',
+                'type' => 'varchar',
+                'length' => 32,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'surname' => [
+                'description' => 'Surame',
+                'type' => 'varchar',
+                'length' => 32,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'phone' => [
+                'description' => 'Phone number',
+                'type' => 'varchar',
+                'length' => 32,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+        ],
+        'primary key' => ['id'],
+    ];
+
+    return $schema;
+}
+

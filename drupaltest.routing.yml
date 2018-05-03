@@ -3,5 +3,6 @@ drupaltest:
   defaults:
     _controller: '\Drupal\drupaltest\Controller\DrupaltestController::content'
     _title: 'Drupaltest'
+    _form: '\Drupal\drupaltest\Form\dataForm'
   requirements:
     _permission: 'access content'
